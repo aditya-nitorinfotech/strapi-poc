@@ -25,8 +25,6 @@ b) .env.production - REACT_APP_BACKEND=/
 1. Created for App.js, and a component file and imported it into the App.js and App.css file
 2. Added functions to get data from API endpoints, assign to local state, call the component to display 
 the data, and pass the values to it
-
 3. Ran build command on react app folder - copied generated build to "public" folder of strapi project folder
 4. Checked deployment done and server is running on localhost:1337
-
 5. Ran npm start for frontend react project- checked on localhost:3000- able to fetch data and display
