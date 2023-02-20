@@ -22,6 +22,7 @@ Created two files at root level for environment variables
 1. .env.development - REACT_APP_BACKEND=http://localhost:1337/  
 2. .env.production - REACT_APP_BACKEND=/
 
+
 1. Created for App.js, and a component file and imported it into the App.js and App.css file
 2. Added functions to get data from API endpoints, assign to local state, call the component to display 
 the data, and pass the values to it
