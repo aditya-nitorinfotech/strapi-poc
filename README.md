@@ -19,8 +19,8 @@ For frontend-
 1. Created an app with npm/yarn create-react-app
 
 Created two files at root level for environment variables 
-a) .env.development - REACT_APP_BACKEND=http://localhost:1337/
-b) .env.production - REACT_APP_BACKEND=/
+.env.development - REACT_APP_BACKEND=http://localhost:1337/ 
+.env.production - REACT_APP_BACKEND=/
 
 1. Created for App.js, and a component file and imported it into the App.js and App.css file
 2. Added functions to get data from API endpoints, assign to local state, call the component to display 
