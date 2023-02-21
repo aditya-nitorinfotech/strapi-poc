@@ -33,7 +33,7 @@ the data, and pass the values to it
 
 
 **POC for custom API endpoints using strapi-**<br/>
-**Main files for reference: In strapi-poc/customAPIService - src/api/posts-report/**
+**Main files for reference: In strapi-poc/custom-API-Service - src/api/posts-report/**
 
 **For this implementation strapi's Entity service API is used** and MVC architecture used for strapi with controller and services
 
