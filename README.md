@@ -34,8 +34,7 @@ the data, and pass the values to it
 
 **POC for custom API endpoints using strapi-**
 
-**For this implementation strapi's Entity service API is used**
-MVC architecture used for strapi with controller and services
+**For this implementation strapi's Entity service API is used** and MVC architecture used for strapi with controller and services
 
 Steps completed:
 1. npx create-strapi-app proj_name --template blog
