@@ -1,5 +1,5 @@
 # strapi-poc
-poc for strapi implementation with small react js app
+**POC for strapi implementation with small react js app**
 
 Understanding strapi, uses
 Referred to official strapi documentation and starter project
@@ -32,9 +32,9 @@ the data, and pass the values to it
 
 
 
-poc for custom api endpoints using strapi-
+**POC for custom API endpoints using strapi-**
 
-For this implementation strapi's Entity service API is used
+**For this implementation strapi's Entity service API is used**
 MVC architecture used for strapi with controller and services
 
 Steps completed:
@@ -70,7 +70,7 @@ console.log('strapi.services ', strapi.services);
 Note: Here, controller function is responsible for invoking the service on request and returning results from the route to response
 They have access to request response object, service functions should not access directly
 
-7. Change the controller file with required code- and restart the server as it can cause error 
+7. Change the controller file with required code- and **restart the server as it can cause error** 
 8. After that authentication is required to access API endpoint 
  For this in admin dashboard, go to Settings->Roles (Users and Permissions Plugin)->Public
  In this click on the created route name name dropdown and select the checkbox and save it
