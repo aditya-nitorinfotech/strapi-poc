@@ -29,3 +29,55 @@ the data, and pass the values to it
 3. Ran build command on react app folder - copied generated build to "public" folder of strapi project folder
 4. Checked deployment done and server is running on localhost:1337
 5. Ran npm start for frontend react project- checked on localhost:3000- able to fetch data and display
+
+
+
+poc for custom api endpoints using strapi-
+
+For this implementation strapi's Entity service API is used
+MVC architecture used for strapi with controller and services
+
+Steps completed:
+1. npx create-strapi-app proj_name --template blog
+2. After project is created and localhost:1337/admin is launched, create an account using exisiting or new 
+credentials 
+
+Note: as we have used blog template- in the dashboard in content manager, already some collections and 
+test data entries will be created, or we can create more or new entries, and manage them
+
+3. After that navigate to folder created in cmd and execute-
+npm/yarn strapi generate
+4. Select the option: api- generate a basic API 
+and enter any name for the api 
+Other options will be shown to generate controller, middleware, service etc.
+
+5. 3 files will be generated after execution of command- present in root folder-- src/api/api_name/controllers,
+src/api/routes, src/api/services
+
+Working: Requests sent to Strapi on any URL are handled by routes. By default, Strapi generates routes for all the 
+content-types. Routes can be added and configured. Once a route exists, reaching it executes some code handled 
+by a controller.
+
+6. Change the routes and services files with required code- for services to fetch all pages and push into an array
+Once service is created- access it by a controller-    
+
+strapi.service('api::yourAPIName.yourServiceName');
+
+To get list of services- 
+
+console.log('strapi.services ', strapi.services);
+
+Note: Here, controller function is responsible for invoking the service on request and returning results from the route to response
+They have access to request response object, service functions should not access directly
+
+7. Change the controller file with required code- and restart the server as it can cause error 
+8. After that authentication is required to access API endpoint 
+ For this in admin dashboard, go to Settings->Roles (Users and Permissions Plugin)->Public
+ In this click on the created route name name dropdown and select the checkbox and save it
+
+8. Now check the endpoint on localhost:1337/api-endpoint and you will see the fetched test data. This is working on collections data 
+and not single data
+9. For UI side, parse the data and display whatever is required 
+
+10. To check on postman/thunder client- 
+hit GET endpoint localhost:1337/api/your-endpoint-name and can verify that can get data
