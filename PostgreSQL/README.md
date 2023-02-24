@@ -29,7 +29,7 @@ Example app- <br/>
 A bank admin app that bankers will use to manage accounts in Strapi, and the DB persistence will be PostgreSQL. <br/>
 1. New accounts can be created in the app.
 2. Transactions can be carried out, i.e., money can be sent from a user to another user.<br/>
-We will use 2 models: Account model for the accounts in the bank, and the Transact model for the transactions carried out. <br/><br/>
+We will use 2 models: Account model for the accounts in the bank, and the Transact model for the transactions carried out. <br/>
 
 eg. <br/>
     Account {
@@ -48,9 +48,7 @@ Name of collection: account
 fields- 
 1. name- long text 
 2. balance- Number (float) type <br/>
-
-Then save the collection. <br/><br/>
-
+Then save the collection. <br/>
 Name of collection: transact
 fields- 
 1. sender- long text 
