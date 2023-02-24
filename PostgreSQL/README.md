@@ -42,7 +42,7 @@ eg. Account {
       sender
       receiver
       amount
-    } <br/><br/>
+    } <br/>
 
 1. Create a new collection using content-type builder in strapi- <br/>
 Name of collection: account
@@ -76,12 +76,12 @@ Then, make the handler point to an index function exported from controllers.
 
 **Note:** Transaction API will not be on the admin panel, as it is standalone API, not a collection type.
 
-**For allowing access to all APIs**-<br/><br/>
+**For allowing access to all APIs**-<br/>
 
 7. In strapi admin panel, go to settings-> Roles (Users and Permissions Plugin) menu. Then click on Public.
 All the APIs with the handlers are here. **Click on the Select all checkbox in each API then Save. ** <br/>
 
-This will allow public access to all the APIs in the Strapi project.<br/></br/>
+This will allow public access to all the APIs in the Strapi project.<br/>
 
 **Seed Data in the collections-**
 1. In content-manager, click on the Account. Click on the + Create new entry button.
