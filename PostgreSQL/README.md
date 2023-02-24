@@ -24,15 +24,14 @@ To verify this, go to strapi-API/config/ folder.<br/>
 Please refer to the postgres section in database.js file for changed values<br/>
 
 **Building collections in strapi** 
+<br/>
 Example app- <br/>
-A bank admin app that bankers will use to manage accounts in Strapi, and the DB persistence will be PostgreSQL. <br/><br/>
-
+A bank admin app that bankers will use to manage accounts in Strapi, and the DB persistence will be PostgreSQL. <br/>
 1. New accounts can be created in the app.
-2. Transactions can be carried out, i.e., money can be sent from a user to another user.<br/><br/>
-
+2. Transactions can be carried out, i.e., money can be sent from a user to another user.<br/>
 We will use 2 models: Account model for the accounts in the bank, and the Transact model for the transactions carried out. <br/><br/>
 
-eg. 
+eg. <br/>
     Account {
       name, 
       balance
@@ -80,7 +79,7 @@ Then, make the handler point to an index function exported from controllers.
 
 7. In strapi admin panel, go to settings-> Roles (Users and Permissions Plugin) menu. Then click on Public.
 All the APIs with the handlers are here: 
-**Click on the Select all checkbox in each API then Save. ** <br/>
+**Click on the Select all checkbox in each API then Save.** <br/>
 
 This will allow public access to all the APIs in the Strapi project. <br/>
 
