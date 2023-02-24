@@ -1,57 +1,91 @@
-# 🚀 Getting started with Strapi
+**Strapi with PostgresSQL-** <br/><br/>
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+npx create-strapi-app your-project-name 
+select quickstart <br/><br/>
 
-### `develop`
+Install required dependencies-<br/><br/>
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+npm install --save @strapi/utils
+# OR
+yarn add @strapi/utils <br/><br/>
 
-```
-npm run develop
-# or
-yarn develop
-```
+After this, localhost:1337/admin will launch again. 
+Strapi contains both a server and a database. The server hosts the APIs, and the database is used to store the application's content.
+Strapi uses the Koajs framework for its server. <br/><br/>
 
-### `start`
+To verify this, go to strapi-API/config/ folder.<br/><br/>
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+1. Download and install the postgresSQL DB for respective OS platform, then run the server. 
+2. Note down the username, password and port number selected for the postgres service, as it will be required for configuration.
+3. Search for pgAdmin in programs in the pc and open it. Then set an admin password, connect to the running server and create a database, select a name and save it.<br/><br/>
 
-```
-npm run start
-# or
-yarn start
-```
+**To configure Strapi to use our PostgreSQL, open project-folder/config/database.js file.**<br/>
 
-### `build`
+Please refer to the postgres section in database.js file for changed values<br/></br/>
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+**Building collections in strapi- ** <<br/><br/>
 
-```
-npm run build
-# or
-yarn build
-```
+Example app- <br/>
+A bank admin app that bankers will use to manage accounts in Strapi, and the DB persistence will be PostgreSQL. <br/><br/>
 
-## ⚙️ Deployment
+1. New accounts can be created in the app.
+2. Transactions can be carried out, i.e., money can be sent from a user to another user.<br/><br/>
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+We will use 2 models: Account model for the accounts in the bank, and the Transact model for the transactions carried out. <br/><br/>
 
-## 📚 Learn more
+eg. Account {
+      name
+      balance
+    } <br/>
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+    Transact {
+      sender
+      receiver
+      amount
+    } <br/><br/>
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+1. Create a new collection using content-type builder in strapi- <br/>
+Name of collection: account
+fields- 
+1. name- long text 
+2. balance- Number (float) type <br/>
 
-## ✨ Community
+Then save the collection. <br/><br/>
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Name of collection: transact
+fields- 
+1. sender- long text 
+2. receiver- long text
+2. amount- Number (float) type <br/>
 
----
+Then save the collection. <br/><br/>
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+**Business Logic** 
+1. Go to project-folder/api
+2. In this folder, verify that there are two folders created for the two collections in strapi- account and transact.
+
+**routes/api-name.js contains the endpoints of the API.
+controllers/ folder contains file to customize endpoints.** <br/><br/>
+
+3. Create a folder transaction in the api folder.
+4. Then create two folder- routes and controllers inside of this new folder.<br/><br/>
+
+5. **Create a file transaction.js inside the routes folder** - we will configure custom router with a /transaction API endpoint.<br/>
+Then, make the handler point to an index function exported from controllers.
+6. Now, **create a file transaction.js inside the controllers folder and write required code- using entityServiceAPI object**
+
+**Note:** Transaction API will not be on the admin panel, as it is standalone API, not a collection type.
+
+**For allowing access to all APIs**-<br/><br/>
+
+7. In strapi admin panel, go to settings-> Roles (Users and Permissions Plugin) menu. Then click on Public.
+All the APIs with the handlers are here. **Click on the Select all checkbox in each API then Save. ** <br/>
+
+This will allow public access to all the APIs in the Strapi project.<br/></br/>
+
+**Seed Data in the collections-**
+1. In content-manager, click on the Account. Click on the + Create new entry button.
+2. Add data as required and then save.
+3. Then check that data is persisted in pgadmin- run query on table accounts in database bank 
+e.g. SELECT * FROM public.accounts
+Query should return the entires created in strapi collection
