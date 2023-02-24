@@ -1,4 +1,4 @@
-**Strapi with PostgresSQL-** <br/><br/>
+**Strapi with PostgreSQL-** <br/><br/>
 
 npx create-strapi-app your-project-name 
 select quickstart <br/>
@@ -15,8 +15,8 @@ Strapi uses the Koajs framework for its server. <br/>
 
 To verify this, go to strapi-API/config/ folder.<br/>
 
-1. Download and install the postgresSQL DB for respective OS platform, then run the server. 
-2. Note down the username, password and port number selected for the postgres service, as it will be required for configuration.
+1. Download and install the postgreSQL DB for respective OS platform, then run the server. 
+2. Note down the username, password and port number selected for the postgreSQL service, as it will be required for configuration.
 3. Search for pgAdmin in programs in the pc and open it. Then set an admin password, connect to the running server and create a database, select a name and save it.<br/>
 
 **To configure Strapi to use our PostgreSQL, open project-folder/config/database.js file.** <br/>
